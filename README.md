@@ -175,28 +175,3 @@ Next milestone: Live agent API on Zeabur (June 7)
 
 
 ---
-
-## ⚡ HOW TO CREATE AND PUSH THIS
-
-Open your terminal and run:
-
-```bash
-# Navigate to your repo
-cd agentic-finance-beast
-
-# Create README.md (copy the content above)
-# Option 1: Using echo (paste line by line)
-echo "# 🦾 Agentic Finance Beast" > README.md
-echo "" >> README.md
-echo "> **From MBA to Agentic AI Engineer | 117-Day Transformation (June 4 - September 30, 2026)**" >> README.md
-
-# Option 2: Better - open VS Code and paste
-code README.md
-# (Then copy-paste the full content above)
-
-# Add and commit
-git add README.md
-git commit -m "Day 1: Add professional README - mission, stack, milestones"
-git push origin main
-```
----
