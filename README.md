@@ -29,7 +29,7 @@ Build production-grade **Agentic AI systems** for FinTech applications. No local
 |------|-----|-------|--------|
 | June 4 | 1 | Environment setup + First API call | [✅](day-01/) |
 | June 5 | 2 | RAG from scratch | [✅](day-02/)  |
-| June 6 | 3 | LangGraph agent | 🔄 (In progress - finishing June 6) |
+| June 6 | 3 | LangGraph agent | ✅ |
 | June 7 | 4 | Deployment to Zeabur | ⏳ |
 | *...117 days of evidence...* | | | |
 ---
