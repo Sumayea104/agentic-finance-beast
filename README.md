@@ -23,14 +23,15 @@ Build production-grade **Agentic AI systems** for FinTech applications. No local
 
 ## 📊 117-Day Battle Map
 
-| Phase | Duration | Focus | Status |
-|-------|----------|-------|--------|
-| **1** | June 4-10 | Environment + RAG + LangGraph | 🔄 In Progress |
-| **2** | June 11-30 | Agentic FinTech (multi-agent, voice, RAG) | ⏳ Upcoming |
-| **3** | July 1-31 | Production deployment + Investment agents | ⏳ Upcoming |
-| **4** | August 1-31 | Advanced patterns + Magnum Opus | ⏳ Upcoming |
-| **5** | September 1-30 | Interview prep + Job applications | ⏳ Upcoming |
+## 📅 Daily Log
 
+| Date | Day | Focus | Commit |
+|------|-----|-------|--------|
+| June 4 | 1 | Environment setup + First API call | [✅](day-01/) |
+| June 5 | 2 | RAG from scratch | 🔄 (In progress - finishing June 6) |
+| June 6 | 3 | LangGraph agent | ⏳ |
+| June 7 | 4 | Deployment to Zeabur | ⏳ |
+| *...117 days of evidence...* | | | |
 ---
 
 ## 🛠️ $0 Technology Stack
