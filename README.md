@@ -173,8 +173,15 @@ Next milestone: Live agent API on Zeabur (June 7)
 | *...117 days of evidence...* | | | |
 
 ---
+## 📚 Learning Resources
 
-*Last updated: June 5, 2026*
+- [FlyPython](https://python.flypython.com) - Curated Python + AI agent resources
+- [LangGraph Docs](https://langchain-ai.github.io/langgraph/)
+- [Mistral AI API](https://console.mistral.ai)
 
+---
+
+*Last updated: June 6, 2026*
+---
 
 ---
