@@ -47,7 +47,7 @@ schedule:
   coding: 12-14 hours
   leetcode: 2 problems/day
   github_commit: EVERY day
-  sleep: 12:00 PM
+  sleep: 12:00 AM
 
 rules:
   - No Docker locally (Zeabur for deployment)
@@ -105,8 +105,8 @@ agentic-finance-beast/
 
 ## 📊 Progress Dashboard
 ```
-GitHub Commits:    ██░░░░░░░░ 3/117 (2.6%)
-LeetCode:          █░░░░░░░░░ 2/100 (2%)
+GitHub Commits:    ████░░░░░░ 19/117 (16%)
+LeetCode:          █░░░░░░░░░ 3/100 (3%)
 Projects:          █░░░░░░░░░ 1/10 (10%)
 Job Applications:  ░░░░░░░░░░ 0/60 (0%)
 
