@@ -23,16 +23,6 @@ Build production-grade **Agentic AI systems** for FinTech applications. No local
 
 ## 📊 117-Day Battle Map
 
-## 📅 Daily Log
-
-| Date | Day | Focus | Commit |
-|------|-----|-------|--------|
-| June 4 | 1 | Environment setup + First API call | [✅](day-01/) |
-| June 5 | 2 | RAG from scratch | [✅](day-02/)  |
-| June 6 | 3 | LangGraph agent | ✅ |
-| June 7 | 4 | Deployment to Zeabur | ⏳ |
-| *...117 days of evidence...* | | | |
----
 
 ## 🛠️ $0 Technology Stack
 
@@ -57,7 +47,7 @@ schedule:
   coding: 12-14 hours
   leetcode: 2 problems/day
   github_commit: EVERY day
-  sleep: 10:00 PM
+  sleep: 12:00 PM
 
 rules:
   - No Docker locally (Zeabur for deployment)
@@ -94,17 +84,6 @@ agentic-finance-beast/
 
 ---
 
-## 📚 Weekly Blog Roll
-
-| Week | Topic | Link |
-|------|-------|------|
-| 1 | Building AI agents on an i3 with 8GB RAM | [Coming Soon] |
-| 2 | RAG from scratch vs LangChain | [Coming Soon] |
-| 3 | Multi-agent collaboration patterns | [Coming Soon] |
-| 4 | Voice AI on a budget | [Coming Soon] |
-
----
-
 ## 🔗 Quick Links
 
 - 📅 [Daily Log](./DAILY_LOG.md)
@@ -118,18 +97,7 @@ agentic-finance-beast/
 
 > "Your hardware is not the enemy. Complacency is."
 
-**I don't have:**
-- ❌ A powerful GPU
-- ❌ 32GB RAM
-- ❌ Docker Desktop
-- ❌ A budget for APIs
 
-**I do have:**
-- ✅ An i3 processor
-- ✅ 8GB of RAM
-- ✅ Cloud APIs
-- ✅ 117 days
-- ✅ A finance background that CS grads don't have
 
 **This is me vs me.**
 
@@ -168,7 +136,7 @@ Next milestone: Live agent API on Zeabur (June 7)
 |------|-----|-------|--------|
 | June 4 | 1 | Environment setup + First API call | [✅](day-01/) |
 | June 5 | 2 | RAG from scratch | [✅](day-02/)|
-| June 6 | 3 | LangGraph agent | ⏳ |
+| June 6 | 3 | LangGraph agent | [✅](day-03/) |
 | June 7 | 4 | Deployment to Zeabur | ⏳ |
 | *...117 days of evidence...* | | | |
 
