@@ -47,11 +47,7 @@ schedule:
   coding: 12-14 hours
   leetcode: 2 problems/day
   github_commit: EVERY day
-<<<<<<< HEAD
   sleep: 11:00 PM
-=======
-  sleep: 12:00 AM
->>>>>>> a071e08118ae072a2e48c2cc602805bd06f5bd24
 
 rules:
   - No Docker locally (Zeabur for deployment)
@@ -85,15 +81,6 @@ agentic-finance-beast/
 | July 31 | Investment research agents | [Link] |
 | August 31 | Magnum Opus complete | [Link] |
 | September 30 | Job applications sent (60+) | [Link] |
-
----
-
-## 🔗 Quick Links
-
-- 📅 [Daily Log](./DAILY_LOG.md)
-- 🧪 [Evaluation Suite](./evals/)
-- 🚀 [Deployed API](https://zeabur.link/your-app)
-- 📧 [Contact](mailto:your.email@example.com)
 
 ---
 
