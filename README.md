@@ -2,7 +2,7 @@
 
 > **From MBA to Agentic AI Engineer | 117-Day Transformation (June 4 - September 30, 2026)**
 
-[![GitHub commit streak](https://img.shields.io/badge/streak-3%20day-yellow)](https://github.com/YOUR_USERNAME/agentic-finance-beast)
+[![GitHub commit streak](https://img.shields.io/badge/streak-4%20day-brightgreen)](https://github.com/YOUR_USERNAME/agentic-finance-beast)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![Made with Python](https://img.shields.io/badge/Python-3.10+-green)](https://python.org)
 [![LangGraph](https://img.shields.io/badge/LangGraph-Agentic-orange)](https://langchain.com/langgraph)
@@ -47,7 +47,7 @@ schedule:
   coding: 12-14 hours
   leetcode: 2 problems/day
   github_commit: EVERY day
-  sleep: 12:00 PM
+  sleep: 11:00 PM
 
 rules:
   - No Docker locally (Zeabur for deployment)
@@ -95,9 +95,7 @@ agentic-finance-beast/
 
 ## 💀 Philosophy
 
-> "Your hardware is not the enemy. Complacency is."
-
-
+> "Whatever you do, consistency matters. Be loyal to yourself"
 
 **This is me vs me.**
 
@@ -106,21 +104,22 @@ agentic-finance-beast/
 ## 📊 Progress Dashboard
 ```
 GitHub Commits:    ██░░░░░░░░ 3/117 (2.6%)
-LeetCode:          █░░░░░░░░░ 2/100 (2%)
+LeetCode:          ██░░░░░░░░ 10/100 (10%)
 Projects:          █░░░░░░░░░ 1/10 (10%)
 Job Applications:  ░░░░░░░░░░ 0/60 (0%)
 
 Next milestone: Live agent API on Zeabur (June 7)
 ```
+
 ---
 ## 🤝 Connect
 
 - **LinkedIn:** [Sumayea Rahman](https://linkedin.com/in/sumayea-rahman)
 - **GitHub:** [Sumayea104](https://github.com/Sumayea104)
 - **Gmail:** sumayearahman7@gmail.com
-- **LeetCode:** [Coming Soon]
+- **LeetCode:** [ShorboNam](https://leetcode.com/u/ShorboNam/)
 - **Portfolio:** [Coming Soon]
-- **Blog:** [Coming Soon]
+- **Technical Notes:** [Coming Soon]
 
 ---
 
@@ -149,7 +148,7 @@ Next milestone: Live agent API on Zeabur (June 7)
 
 ---
 
-*Last updated: June 6, 2026*
+*Last updated: June 7, 2026*
 ---
 
 ---
