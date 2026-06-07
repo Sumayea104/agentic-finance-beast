@@ -107,15 +107,13 @@ agentic-finance-beast/
 
 ## 📊 Progress Dashboard
 ```
-<<<<<<< HEAD
-GitHub Commits:    ██░░░░░░░░ 3/117 (2.6%)
-LeetCode:          ██░░░░░░░░ 10/100 (10%)
-=======
-GitHub Commits:    ████░░░░░░ 19/117 (16%)
-LeetCode:          █░░░░░░░░░ 3/100 (3%)
->>>>>>> a071e08118ae072a2e48c2cc602805bd06f5bd24
-Projects:          █░░░░░░░░░ 1/10 (10%)
-Job Applications:  ░░░░░░░░░░ 0/60 (0%)
+| Metric | Tracks | Target | Current |
+|--------|--------|--------|---------|
+| **Days Completed** | Days you've done (out of 117) | 117 | 4 |
+| **GitHub Commits** | Total commits (daily average ~5) | 500+ | 19 |
+| **LeetCode** | Problems solved | 100 | 10 |
+| **Projects** | Major projects built | 10 | 1 |
+| **Job Apps** | Applications sent | 60 | 0 |
 
 Next milestone: Live agent API on Zeabur (June 7)
 ```
