@@ -17,13 +17,9 @@ if not MISTRAL_API_KEY:
 
 print("✅ API key loaded")
 
-# ============================================
-# STEP 1: Calculator Tool
-# ============================================
 def calculator(expression: str) -> str:
-    """Safely evaluate math expressions"""
+
     try:
-        # Only allow numbers and basic operators
         allowed = set("0123456789+-*/(). ")
         if not all(c in allowed for c in expression):
             return "Error: Invalid characters"
@@ -31,45 +27,31 @@ def calculator(expression: str) -> str:
         return f"Result: {result}"
     except Exception as e:
         return f"Error: {e}"
-
-# ============================================
-# STEP 2: Decide if tool is needed
-# ============================================
+    
 def should_use_tool(question: str) -> bool:
-    """Check if question requires calculation"""
     math_keywords = ["calculate", "math", "plus", "minus", "multiply", 
                      "divide", "sum", "*", "+", "-", "/", "what is"]
     
-    # Also check for number patterns
     has_numbers = bool(re.search(r'\d+', question))
     has_operator = bool(re.search(r'[+\-*/]', question))
     
     return any(keyword in question.lower() for keyword in math_keywords) or (has_numbers and has_operator)
 
-# ============================================
-# STEP 3: Extract and calculate
-# ============================================
 def extract_and_calculate(question: str) -> str:
-    """Extract math expression from question and calculate"""
-    # Find numbers and operators
     numbers = re.findall(r'\d+', question)
     operators = re.findall(r'[+\-*/]', question)
     
     if len(numbers) >= 2 and operators:
-        # Simple two-number operation
+
         expression = f"{numbers[0]} {operators[0]} {numbers[1]}"
         return calculator(expression)
     elif len(numbers) == 1 and operators:
-        # Single number with operation (e.g., "double 5")
         if operators[0] == '*':
             expression = f"{numbers[0]} * 2"
             return calculator(expression)
     
     return "No calculation needed"
 
-# ============================================
-# STEP 4: Generate answer with Mistral
-# ============================================
 def generate_answer(question: str, tool_result: str = None) -> str:
     """Generate final answer using Mistral API"""
     
@@ -101,15 +83,11 @@ Provide a helpful, concise answer. Be friendly and informative."""
     except Exception as e:
         return f"Error: {e}"
 
-# ============================================
-# STEP 5: Agent loop
-# ============================================
 def run_agent(question: str):
-    """Main agent function"""
+    
     print(f"\n{'─'*50}")
     print(f"❓ User: {question}")
     
-    # Decide if tool needed
     if should_use_tool(question):
         print("🔧 Agent decided: Using calculator tool...")
         tool_result = extract_and_calculate(question)
@@ -122,9 +100,7 @@ def run_agent(question: str):
     print(f"🤖 Agent: {answer}")
     return answer
 
-# ============================================
-# STEP 6: Test the agent
-# ============================================
+
 if __name__ == "__main__":
     print("="*60)
     print("🤖 LANGGRAPH-STYLE AGENT WITH CALCULATOR TOOL")

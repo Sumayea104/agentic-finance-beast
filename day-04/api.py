@@ -67,7 +67,7 @@ class AnswerResponse(BaseModel):
 # ============================================
 
 def calculator(expression: str) -> str:
-    """Safely evaluate mathematical expressions"""
+
     try:
         # Allow only numbers, operators, parentheses, and spaces
         allowed = set("0123456789+-*/(). ")
@@ -85,8 +85,7 @@ def calculator(expression: str) -> str:
 def should_use_tool(question: str) -> bool:
     """Determine if the question requires calculation"""
     question_lower = question.lower()
-    
-    # Keywords that suggest math
+
     math_keywords = [
         "calculate", "math", "plus", "minus", "multiply", "divide",
         "sum", "add", "subtract", "total", "average", "percent",

@@ -20,9 +20,6 @@ if not MISTRAL_API_KEY or not GEMINI_API_KEY:
 
 print("✅ API keys loaded")
 
-# ============================================
-# DOCUMENT (our knowledge base)
-# ============================================
 document = """
 An AI agent is a software system that perceives its environment and takes actions to achieve specific goals.
 Unlike traditional programs that follow fixed rules, AI agents can make decisions, learn from feedback, and adapt to new situations.
@@ -34,14 +31,8 @@ The most advanced agents can collaborate with other agents, remember past conver
 # Split into sentences
 chunks = [s.strip() + "." for s in document.replace("\n", " ").split(". ") if s.strip()]
 print(f"📄 Document split into {len(chunks)} chunks")
-
-# ============================================
-# CORRECTED: Gemini Embedding Function
-# ============================================
 def get_embedding(text):
-    """Get embedding using gemini-embedding-001 (current model)"""
-    
-    # CORRECTED URL and model name
+
     url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-embedding-001:embedContent?key={GEMINI_API_KEY}"
     
     payload = {
@@ -56,7 +47,7 @@ def get_embedding(text):
         
         if response.status_code == 200:
             data = response.json()
-            # The embedding is in data['embedding']['values']
+            
             embedding = data.get("embedding", {}).get("values", [])
             if embedding:
                 return embedding
@@ -71,9 +62,6 @@ def get_embedding(text):
         print(f"   ⚠️ Request failed: {e}")
         return None
 
-# ============================================
-# Generate embeddings
-# ============================================
 print("\n🔢 Generating embeddings...")
 chunk_embeddings = []
 
