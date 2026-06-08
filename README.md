@@ -76,7 +76,7 @@ agentic-finance-beast/
 | Date | Milestone | Evidence |
 |------|-----------|----------|
 | June 4 | First API call to Mistral | [test_mistral.py](day-01/test_mistral.py) |
-| June 7 | Live agent API on Zeabur | [Link] |
+| June 7 | Live agent API on Render | [✅](https://agentic-finance-beast.onrender.com) |
 | June 30 | Multi-agent FinTech system | [Link] |
 | July 31 | Investment research agents | [Link] |
 | August 31 | Magnum Opus complete | [Link] |
@@ -96,13 +96,13 @@ agentic-finance-beast/
 
 | Goal | Progress |
 |--------|----------|
-| 📅 Days Completed | `4/117` (3.4%) |
-| 💻 GitHub Commits | `19` total |
+| 📅 Days Completed | `5/117` (4.3%) |
+| 💻 GitHub Commits | `26` total |
 | 🧩 LeetCode | `10/100` (10%) |
-| 🚀 Projects | `1/10` (10%) |
-| 📨 Job Applications | `0/60` (0%) |
+| 🚀 Projects | `2/10` (10%) |
+| 📨 Job Applications | `2/60` (0%) |
 
-> 🎯 **Next Milestone:** Deploy Live Agent API on Zeabur (June 7, 2026)
+🎯 Next Milestone: Multi-agent FinTech system (June 30, 2026)
 
 ---
 ## 🤝 Connect
@@ -129,7 +129,9 @@ agentic-finance-beast/
 | June 4 | 1 | Environment setup + First API call | [✅](day-01/) |
 | June 5 | 2 | RAG from scratch | [✅](day-02/)|
 | June 6 | 3 | LangGraph agent | [✅](day-03/) |
-| June 7 | 4 | Deployment to Zeabur | ⏳ |
+| June 7 | 4 | Deployment to Render | [✅](day-04/) |
+| June 8 | 5 | Deployment to Render | ⏳ |
+| June 9 | 6 | Deployment to Render | ⏳ |
 | *...117 days of evidence...* | | | |
 
 ---
@@ -141,7 +143,7 @@ agentic-finance-beast/
 
 ---
 
-*Last updated: June 7, 2026*
+*Last updated: June 8, 2026*
 ---
 
 ---
