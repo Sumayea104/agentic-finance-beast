@@ -2,7 +2,7 @@
 
 > **From MBA to Agentic AI Engineer | 117-Day Transformation (June 4 - September 30, 2026)**
 
-[![GitHub commit streak](https://img.shields.io/badge/streak-4%20day-brightgreen)](https://github.com/YOUR_USERNAME/agentic-finance-beast)
+[![GitHub commit streak](https://img.shields.io/badge/streak-5%20day-brightgreen)](https://github.com/YOUR_USERNAME/agentic-finance-beast)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![Made with Python](https://img.shields.io/badge/Python-3.10+-green)](https://python.org)
 [![LangGraph](https://img.shields.io/badge/LangGraph-Agentic-orange)](https://langchain.com/langgraph)
@@ -99,10 +99,11 @@ agentic-finance-beast/
 | 📅 Days Completed | `5/117` (4.3%) |
 | 💻 GitHub Commits | `26` total |
 | 🧩 LeetCode | `10/100` (10%) |
-| 🚀 Projects | `2/10` (10%) |
-| 📨 Job Applications | `2/60` (0%) |
+| 🚀 Projects | `1/10` (10%) |
+| 📨 Job Applications | `0/60` (0%) |
 
-🎯 Next Milestone: Multi-agent FinTech system (June 30, 2026)
+🎯 This Week's Goal: Design a 2-agent stock research system (by June 10)
+🎯 Next Major Milestone: Multi-agent FinTech system (June 30, 2026)
 
 ---
 ## 🤝 Connect
@@ -130,8 +131,7 @@ agentic-finance-beast/
 | June 5 | 2 | RAG from scratch | [✅](day-02/)|
 | June 6 | 3 | LangGraph agent | [✅](day-03/) |
 | June 7 | 4 | Deployment to Render | [✅](day-04/) |
-| June 8 | 5 | Deployment to Render | ⏳ |
-| June 9 | 6 | Deployment to Render | ⏳ |
+| June 8 | 5 |Multi-Agent System Design | ⏳ |
 | *...117 days of evidence...* | | | |
 
 ---
@@ -144,6 +144,5 @@ agentic-finance-beast/
 ---
 
 *Last updated: June 8, 2026*
----
 
 ---
