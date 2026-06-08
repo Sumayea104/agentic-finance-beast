@@ -12,8 +12,6 @@ import re
 import math
 from typing import Optional
 
-# Load environment variables
-load_dotenv()
 
 # Initialize FastAPI
 app = FastAPI(
@@ -25,8 +23,19 @@ app = FastAPI(
 )
 
 # API Keys
+load_dotenv()
 MISTRAL_API_KEY = os.getenv("MISTRAL_API_KEY")
+
+if not MISTRAL_API_KEY:
+    print("❌ Error: MISTRAL_API_KEY not found in .env file")
+    exit(1)
+
+print("✅ API key loaded")
+
 GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")  # For future RAG features
+
+if not GEMINI_API_KEY:
+    print("⚠️  Warning: GEMINI_API_KEY not found in .env file")
 
 # Health check
 @app.get("/")
@@ -236,3 +245,7 @@ def list_tools():
             }
         ]
     }
+
+@app.get("/favicon.ico")
+async def favicon():
+    return {"message": "No icon available"}
