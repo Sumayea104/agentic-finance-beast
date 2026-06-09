@@ -10,19 +10,29 @@ Added a Sentiment Analysis Agent to my multi-agent FinTech system:
 - 🔗 Connect sentiment to stock price impact
 
 ## 🏗️ Updated Architecture
-User Question
-↓
-Supervisor
-↓
-┌──────┴──────┐
-↓ ↓
-Price Agent Sentiment Agent
-↓ ↓
-└──────┬──────┘
-↓
-Final Answer
-
-text
+┌─────────────────────────────────────────────────────────────────┐
+│                        USER QUESTION                            │
+└─────────────────────────────┬───────────────────────────────────┘
+                              │
+                              ▼
+                    ┌─────────────────┐
+                    │   SUPERVISOR    │
+                    │  (Router Agent) │
+                    └────────┬────────┘
+                             │
+              ┌──────────────┼──────────────┐
+              │              │              │
+              ▼              │              ▼
+    ┌─────────────┐          │      ┌─────────────┐
+    │   PRICE     │          │      │  SENTIMENT  │
+    │   AGENT     │          │      │   AGENT     │
+    └──────┬──────┘          │      └──────┬──────┘
+           │                 │             │
+           │     ┌───────────┴───────────┐ │
+           │     │                       │ │
+           └─────►    FINAL ANSWER       ◄─┘
+                 │     GENERATION        │
+                 └───────────────────────┘
 
 ## 📊 Test Results
 | Question | Agent Used | Success |
@@ -41,4 +51,3 @@ News sentiment often predicts price movement.
 
 ## 📅 Status
 ✅ Complete - June 9, 2026
-EOF
