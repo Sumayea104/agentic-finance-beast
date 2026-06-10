@@ -98,7 +98,7 @@ agentic-finance-beast/
 |--------|----------|
 | 📅 Days Completed | `6/117` (4.3%) |
 | 💻 GitHub Commits | `36` total |
-| 🧩 LeetCode | `16/100` (14%) |
+| 🧩 LeetCode | `21/100` (21%) | 🟢 11 Easy | 🟡 7 Medium | 🔴 3 Hard |
 | 🚀 Projects | `1/10` (10%) |
 | 📨 Job Applications | `0/60` (0%) |
 
