@@ -76,7 +76,7 @@ agentic-finance-beast/
 | Date | Milestone | Evidence |
 |------|-----------|----------|
 | June 4 | First API call to Mistral | [test_mistral.py](day-01/test_mistral.py) |
-| June 7 | Live agent API on Render | [(https://agentic-finance-beast.onrender.com)] |
+| June 7 | Live agent API on Render | [https://agentic-finance-beast.onrender.com] |
 | June 30 | Multi-agent FinTech system | [Link] |
 | July 31 | Investment research agents | [Link] |
 | August 31 | Magnum Opus complete | [Link] |
@@ -96,7 +96,7 @@ agentic-finance-beast/
 
 | Goal | Progress |
 |--------|----------|
-| 📅 Days Completed | `6/117` (4.3%) |
+| 📅 Days Completed | `7/117` (4.3%) |
 | 💻 GitHub Commits | `36` total |
 | 🧩 LeetCode | `21/100` (21%) | 🟢 11 Easy | 🟡 7 Medium | 🔴 3 Hard |
 | 🚀 Projects | `1/10` (10%) |
@@ -132,7 +132,7 @@ agentic-finance-beast/
 | June 6 | 3 | LangGraph agent | [✅](day-03/) |
 | June 7 | 4 | Deployment to Render | [✅](day-04/) |
 | June 8 | 5 |Multi-Agent System Design | [✅](day-05/) |
-| June 9 | 6 | Sentiment Analysis Agent | [✅](day-06/) |
+| June 9 | 6 | Sentiment Analysis Agent | [✅](day-07/) |
 | June 10 | 7 | Multi-agent collaboration | ⏳ |
 | June 11 | 8 | Production evaluation suite | ⏳ |
 | June 12 | 9 | Week 2 review + blog post | ⏳ |
