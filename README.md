@@ -2,7 +2,7 @@
 
 > **From MBA to Agentic AI Engineer | 117-Day Transformation (June 4 - September 30, 2026)**
 
-[![GitHub commit streak](https://img.shields.io/badge/streak-10%20day-brightgreen)](https://github.com/YOUR_USERNAME/agentic-finance-beast)
+[![GitHub commit streak](https://img.shields.io/badge/streak-11%20day-brightgreen)](https://github.com/YOUR_USERNAME/agentic-finance-beast)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![Made with Python](https://img.shields.io/badge/Python-3.10+-green)](https://python.org)
 [![LangGraph](https://img.shields.io/badge/LangGraph-Agentic-orange)](https://langchain.com/langgraph)
@@ -97,8 +97,8 @@ agentic-finance-beast/
 | Goal | Progress |
 |--------|----------|
 | 📅 Days Completed | `10/117` (4.3%) |
-| 💻 GitHub Commits | `39` total |
-| 🧩 LeetCode | `24/100` (21%) | 🟢 13 Easy | 🟡 7 Medium | 🔴 4 Hard |
+| 💻 GitHub Commits | `45` total |
+| 🧩 LeetCode | `30/100` (21%) | 🟢 13 Easy | 🟡 12 Medium | 🔴 5 Hard |
 | 🚀 Projects | `1/10` (10%) |
 | 📨 Job Applications | `0/60` (0%) |
 
@@ -147,6 +147,6 @@ agentic-finance-beast/
 
 ---
 
-*Last updated: June 13, 2026*
+*Last updated: June 14, 2026*
 
 ---
