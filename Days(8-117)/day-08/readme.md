@@ -123,17 +123,14 @@ def ask_question(question):
 ```
 ERROR: 54000: column cannot have more than 2000 dimensions for ivfflat index
 ```
-Root Cause: ivfflat index has a 2000-dimension limit. Gemini embeddings are 3072 dimensions.
+**Root Cause: ivfflat index has a 2000-dimension limit. Gemini embeddings are 3072 dimensions.**
 
-Solution:
+**Solution:**
+-Switched from Gemini to Mistral embeddings (1024 dimensions)
+-Updated table schema: VECTOR(1024)
+-Recreated all tables and indexes
 
-Switched from Gemini to Mistral embeddings (1024 dimensions)
-
-Updated table schema: VECTOR(1024)
-
-Recreated all tables and indexes
-
-Key Lesson: Always check vector dimensions against your database's index limits.
+**Key Lesson: Always check vector dimensions against your database's index limits.**
 
 **Problem 2: HNSW Index Also Has Limits**
 
@@ -142,15 +139,13 @@ Key Lesson: Always check vector dimensions against your database's index limits.
 ERROR: 54000: column cannot have more than 2000 dimensions for hnsw index
 ```
 
-Root Cause: HNSW index also has a 2000-dimension limit in this Supabase version.
+**Root Cause: HNSW index also has a 2000-dimension limit in this Supabase version.**
 
-Solution:
+**Solution:**
+-Used ivfflat index instead
+-Both work, but ivfflat is simpler to configure
 
-Used ivfflat index instead
-
-Both work, but ivfflat is simpler to configure
-
-Key Lesson: Know your database's limitations before choosing an embedding model.
+**Key Lesson: Know your database's limitations before choosing an embedding model.**
 
 **Problem 3: Multiple Indexes Created**
 -Issue: After multiple setup attempts, duplicate indexes existed.
@@ -165,7 +160,7 @@ SELECT indexname FROM pg_indexes
 WHERE tablename = 'documents' 
 AND indexname LIKE '%embedding%';
 ```
-Key Lesson: Clean up after yourself. Duplicate indexes waste storage and slow writes.
+**Key Lesson: Clean up after yourself. Duplicate indexes waste storage and slow writes.**
 
 
 **Problem 4: RLS Policy Warning**
@@ -174,84 +169,66 @@ Key Lesson: Clean up after yourself. Duplicate indexes waste storage and slow wr
 ```
 RLS Policy Always True: Service role can do anything
 ```
-Solution: For development, this is acceptable. For production, implement proper role-based access.
+**Solution: For development, this is acceptable. For production, implement proper role-based access.**
 
-Key Lesson: Development security != Production security. Plan for the future.
+**Key Lesson: Development security != Production security. Plan for the future.**
 
-Problem 5: Connection Testing
-Issue: Script ran but no data inserted.
+**Problem 5: Connection Testing**
+**Issue: Script ran but no data inserted.**
 
-Solution:
+**Solution:**
 
-Created a test script (test_supabase_connection.py)
+-Created a test script (test_supabase_connection.py)
+-Verified .env variables
+-Confirmed service role key permissions
 
-Verified .env variables
+**Key Lesson: Always test your database connection before running complex scripts.**
+---
+### 🎯 What I Learned
+**Technical Lessons**
+-Vector dimensions matter — Choose embedding model based on database limits
+-Test early, test often — Validate database connection before full script
+-Clean up artifacts — Remove duplicate indexes, tables, policies
+-Know your free tier limits — Supabase has 2000-dimension index limit
 
-Confirmed service role key permissions
+**Architecture Lessons**
+-Persistent storage is non-negotiable for production AI systems
+-Indexing is critical for performance at scale
+-Row Level Security (RLS) needs proper planning
+-Document your schema for future maintenance
+---
+### 🔮 Future Considerations
+-Immediate Improvements
+-Add more documents to the knowledge base
+-Implement chunking strategies (overlapping chunks)
+-Add metadata filtering (e.g., date range, source)
 
-Key Lesson: Always test your database connection before running complex scripts.
+**Production Readiness**
+-Move vector extension to separate schema
+-Implement proper RLS policies
+-Add monitoring and logging
+-Set up backup for vector data
 
-🎯 What I Learned
-Technical Lessons
-Vector dimensions matter — Choose embedding model based on database limits
+**Scaling**
+-Implement hybrid search (keyword + vector)
+-Add reranking layer for better results
+-Consider partitioning for large datasets
+-Explore batch processing for updates
 
-Test early, test often — Validate database connection before full script
-
-Clean up artifacts — Remove duplicate indexes, tables, policies
-
-Know your free tier limits — Supabase has 2000-dimension index limit
-
-Architecture Lessons
-Persistent storage is non-negotiable for production AI systems
-
-Indexing is critical for performance at scale
-
-Row Level Security (RLS) needs proper planning
-
-Document your schema for future maintenance
-
-🔮 Future Considerations
-Immediate Improvements
-Add more documents to the knowledge base
-
-Implement chunking strategies (overlapping chunks)
-
-Add metadata filtering (e.g., date range, source)
-
-Production Readiness
-Move vector extension to separate schema
-
-Implement proper RLS policies
-
-Add monitoring and logging
-
-Set up backup for vector data
-
-Scaling
-Implement hybrid search (keyword + vector)
-
-Add reranking layer for better results
-
-Consider partitioning for large datasets
-
-Explore batch processing for updates
-
-Integration
-Connect RAG to LangGraph agents
-
-Add real-time document updates
-
-Build ingestion pipeline for new documents
-
-Create evaluation suite for retrieval quality
-
-💬 Final Thoughts
+**Integration**
+-Connect RAG to LangGraph agents
+-Add real-time document updates
+-Build ingestion pipeline for new documents
+-Create evaluation suite for retrieval quality
+---
+### 💬 Final Thoughts
 Moving from in-memory RAG to production-ready vector storage was a critical step in building real-world AI systems. The challenges I faced (dimension limits, index types, duplicate artifacts) are exactly what you encounter in production.
 
-Key takeaway: Production AI isn't just about models. It's about infrastructure, persistence, and understanding your tools' limitations.
+**Key takeaway: Production AI isn't just about models. It's about infrastructure, persistence, and understanding your tools' limitations.**
 
-Built as part of my 117-day MBA → AI Engineer journey.
-Day 8 complete. 109 days to go.
+**Built as part of my 117-day MBA → AI Engineer journey.**
+___
+**Day 8 complete. 109 days to go.**
 
 
 
