@@ -2,7 +2,7 @@
 
 > **From MBA to Agentic AI Engineer | 117-Day Transformation (June 4 - September 30, 2026)**
 
-[![GitHub commit streak](https://img.shields.io/badge/streak-11%20day-brightgreen)](https://github.com/YOUR_USERNAME/agentic-finance-beast)
+[![GitHub commit streak](https://img.shields.io/badge/streak-16%20day-brightgreen)](https://github.com/YOUR_USERNAME/agentic-finance-beast)
 [![License](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![Made with Python](https://img.shields.io/badge/Python-3.10+-green)](https://python.org)
 [![LangGraph](https://img.shields.io/badge/LangGraph-Agentic-orange)](https://langchain.com/langgraph)
@@ -134,7 +134,7 @@ agentic-finance-beast/
 | June 8 | 5 |Multi-Agent System Design | [✅](day-05/) |
 | June 9 | 6 | Sentiment Analysis Agent | [✅](day-06/) |
 | June 10 | 7 | Multi-agent collaboration |  [✅](day-07/) |
-| June 11 | 8 | Production evaluation suite | ⏳ |
+| June 11 | 8 | Production evaluation suite | [✅](Days/day-08/) |
 | June 12 | 9 | Week 2 review + blog post | ⏳ |
 | *...117 days of evidence...* | | | |
 
@@ -147,6 +147,6 @@ agentic-finance-beast/
 
 ---
 
-*Last updated: June 18, 2026*
+*Last updated: June 19, 2026*
 
 ---
