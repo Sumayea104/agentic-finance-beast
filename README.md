@@ -100,7 +100,7 @@ agentic-finance-beast/
 | 💻 GitHub Commits | `45` total |
 | 🧩 LeetCode | `30/100` (21%) | 🟢 13 Easy | 🟡 12 Medium | 🔴 5 Hard |
 | 🚀 Projects | `1/10` (10%) |
-| 📨 Job Applications | `0/60` (0%) |
+
 
 🎯 This Week's Goal: Design a 2-agent stock research system (by June 10)
 🎯 Next Major Milestone: Multi-agent FinTech system (June 30, 2026)
@@ -147,6 +147,6 @@ agentic-finance-beast/
 
 ---
 
-*Last updated: June 14, 2026*
+*Last updated: June 18, 2026*
 
 ---
