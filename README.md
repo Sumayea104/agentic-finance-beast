@@ -134,7 +134,7 @@ agentic-finance-beast/
 | June 8 | 5 |Multi-Agent System Design | [✅](day-05/) |
 | June 9 | 6 | Sentiment Analysis Agent | [✅](day-06/) |
 | June 10 | 7 | Multi-agent collaboration |  [✅](day-07/) |
-| June 11 | 8 | Production evaluation suite | [✅](Days/day-08/) |
+| June 11 | 8 | Production evaluation suite | [✅](Days(8-117)/day-08/) |
 | June 12 | 9 | Week 2 review + blog post | ⏳ |
 | *...117 days of evidence...* | | | |
 
