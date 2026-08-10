@@ -15,6 +15,7 @@
 **Agentic Finance Beast** is an autonomous multi-agent financial research microservice designed to transform raw market feeds into actionable investment intelligence.
 
 Built on **FastAPI** and **LangGraph**, the engine orchestrates autonomous AI agents that:
+
 - Analyze real-time market data via yfinance
 - Execute vector-driven sentiment retrieval via **Supabase (`pgvector`)**
 - Compute portfolio risk metrics
@@ -49,11 +50,12 @@ It serves as the core AI engine for the [Agentic Finance Frontend](https://githu
 ┌────────────────────────────────────────────────────────────────────────┐
 │                    Supabase (pgvector) + Financial APIs                │
 └────────────────────────────────────────────────────────────────────────┘
+```
 
 ## 🛠️ Tech Stack
 
 | Layer | Technology |
-|-------|------------|
+| ------- | ------------ |
 | **Language** | Python 3.11+ |
 | **Framework** | FastAPI |
 | **Agents** | LangGraph |
@@ -67,7 +69,7 @@ It serves as the core AI engine for the [Agentic Finance Frontend](https://githu
 ## 📡 API Endpoints
 
 | Method | Endpoint | Description |
-|--------|----------|-------------|
+| -------- | ---------- | ------------- |
 | `GET` | `/` | Health check |
 | `POST` | `/ask` | Ask a financial question |
 | `GET` | `/docs` | Swagger UI |
@@ -89,7 +91,10 @@ cd agentic-finance-beast
 pip install -r requirements.txt
 cp .env.example .env
 uvicorn main:app --reload
+```
 
 ---
-📜 License
+
+## 📜 License
+
 MIT © Sumayea Rahman

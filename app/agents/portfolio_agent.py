@@ -1,8 +1,3 @@
-"""
-Day 7: Portfolio Tracker Agent for FinTech Research
-Adds portfolio management to multi-agent system
-"""
-
 import requests
 import os
 import json
@@ -198,7 +193,7 @@ def supervisor_node(state: FinTechAgentState) -> dict:
     
     # Portfolio keywords
     portfolio_keywords = ["portfolio", "holdings", "track", "my stocks", 
-                          "shares at", "bought at", "portfolio performance"]
+                            "shares at", "bought at", "portfolio performance"]
     
     # Sentiment keywords
     sentiment_keywords = ["sentiment", "news", "feeling", "market mood"]

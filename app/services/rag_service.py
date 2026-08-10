@@ -1,8 +1,3 @@
-"""
-Day 8: RAG with Persistent Vector Storage (Supabase pgvector)
-Using Mistral Embeddings (1024 dimensions) - fits within PostgreSQL limits
-"""
-
 import requests
 import os
 import math

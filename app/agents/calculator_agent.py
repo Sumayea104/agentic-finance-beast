@@ -1,8 +1,3 @@
-"""
-Day 3: LangGraph Agent with Calculator Tool
-Built: June 6, 2026
-"""
-
 import requests
 import os
 import re

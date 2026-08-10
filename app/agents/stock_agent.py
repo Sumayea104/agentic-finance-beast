@@ -1,4 +1,3 @@
-
 import requests
 import os
 import re
@@ -113,7 +112,7 @@ def supervisor_node(state: MultiAgentState) -> dict:
     question = state.get("user_input", "")
     
     stock_keywords = ["stock", "price", "aapl", "googl", "msft", "tsla", 
-                      "apple", "google", "microsoft", "tesla", "amazon"]
+                        "apple", "google", "microsoft", "tesla", "amazon"]
     
     if any(k in question.lower() for k in stock_keywords):
         print("👔 Supervisor: Routing to Stock Researcher")

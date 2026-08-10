@@ -1,8 +1,3 @@
-"""
-Day 6: Sentiment Analysis Agent for FinTech Research
-Adds news sentiment analysis to multi-agent system
-"""
-
 import requests
 import os
 import json
@@ -224,11 +219,11 @@ def supervisor_node(state: FinTechAgentState) -> dict:
     
     # Sentiment keywords
     sentiment_keywords = ["sentiment", "news", "feeling", "market mood", 
-                          "positive", "negative", "reaction", "impact"]
+                            "positive", "negative", "reaction", "impact"]
     
     # Stock price keywords
     price_keywords = ["price", "stock", "trading", "worth", "value", 
-                      "aapl", "googl", "msft", "tsla", "apple", "tesla"]
+                        "aapl", "googl", "msft", "tsla", "apple", "tesla"]
     
     if any(k in question for k in sentiment_keywords):
         print("👔 Supervisor: Routing to Sentiment Analysis Agent")
