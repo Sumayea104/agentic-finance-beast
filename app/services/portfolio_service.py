@@ -1,93 +1,83 @@
-import uuid
-import yfinance as yf
-from datetime import datetime
-from typing import Dict, List, Tuple
-from app.models.portfolio import HoldingCreate, HoldingUpdate
+from typing import Dict, Any, List
+from app.repositories.transaction_repository import TransactionRepository
+from app.services.market_data_service import MarketDataService
 
-# In-memory storage (keyed by user_id -> dict of holdings)
-portfolio_db: Dict[str, Dict[str, dict]] = {}
+class PortfolioService:
+    def __init__(self, repository: TransactionRepository):
+        self.repo = repository
+        self.market_data = MarketDataService(cache_ttl_seconds=300)
 
-def get_live_price(symbol: str) -> float:
-    """Fetch live market price via yfinance with fallback."""
-    try:
-        ticker = yf.Ticker(symbol)
-        # Fast path: current price from fast_info
-        price = ticker.fast_info.get("lastPrice")
-        if price:
-            return round(price, 2)
-        # Fallback: historical close price
-        df = ticker.history(period="1d")
-        if not df.empty:
-            return round(df["Close"].iloc[-1], 2)
-    except Exception:
-        pass
-    return 100.0  # Safe fallback default for testing/mocking
+    async def get_portfolio_summary(self, portfolio_id: str) -> Dict[str, Any]:
+        """
+        Calculates deterministic portfolio metrics (Valuation, Cost Basis, P&L, Allocation)
+        using cached market data from MarketDataService.
+        """
+        # 1. Database -holdings fech
+        holdings = await self.repo.get_holdings(portfolio_id)
+        if not holdings:
+            return {
+                "portfolio_id": portfolio_id,
+                "total_value": 0.0,
+                "total_cost": 0.0,
+                "total_pnl": 0.0,
+                "pnl_percent": 0.0,
+                "holdings": [],
+                "allocation": []
+            }
 
-def add_holding(user_id: str, data: HoldingCreate) -> dict:
-    if user_id not in portfolio_db:
-        portfolio_db[user_id] = {}
-        
-    holding_id = str(uuid.uuid4())
-    symbol = data.symbol.upper()
-    
-    holding = {
-        "id": holding_id,
-        "user_id": user_id,
-        "symbol": symbol,
-        "quantity": data.quantity,
-        "buy_price": data.buy_price,
-        "buy_date": data.buy_date or datetime.utcnow().strftime("%Y-%m-%d"),
-        "created_at": datetime.utcnow()
-    }
-    portfolio_db[user_id][holding_id] = holding
-    return _format_holding_response(holding)
+        # 2. MarketDataService cashed prie fetch
+        symbols = [h["symbol"] for h in holdings]
+        live_prices = await self.market_data.get_prices(symbols)
 
-def get_user_portfolio(user_id: str) -> dict:
-    user_holdings = portfolio_db.get(user_id, {})
-    formatted_holdings = []
-    
-    total_value = 0.0
-    total_cost = 0.0
-    
-    for holding in user_holdings.values():
-        resp = _format_holding_response(holding)
-        formatted_holdings.append(resp)
-        total_value += resp["market_value"]
-        total_cost += resp["cost_basis"]
-        
-    total_pnl = total_value - total_cost
-    pnl_percent = (total_pnl / total_cost * 100) if total_cost > 0 else 0.0
-    
-    return {
-        "total_value": round(total_value, 2),
-        "total_cost": round(total_cost, 2),
-        "total_pnl": round(total_pnl, 2),
-        "pnl_percent": round(pnl_percent, 2),
-        "holdings": formatted_holdings
-    }
+        total_value = 0.0
+        total_cost = 0.0
+        formatted_holdings = []
 
-def delete_holding(user_id: str, holding_id: str) -> bool:
-    if user_id in portfolio_db and holding_id in portfolio_db[user_id]:
-        del portfolio_db[user_id][holding_id]
-        return True
-    return False
+        # 3. P&L ও Cost Basis 
+        for h in holdings:
+            symbol = h["symbol"]
+            quantity = float(h["quantity"])
+            avg_price = float(h["average_buy_price"])
+            current_price = live_prices.get(symbol, avg_price)
 
-def _format_holding_response(holding: dict) -> dict:
-    symbol = holding["symbol"]
-    current_price = get_live_price(symbol)
-    quantity = holding["quantity"]
-    buy_price = holding["buy_price"]
-    
-    market_value = round(quantity * current_price, 2)
-    cost_basis = round(quantity * buy_price, 2)
-    unrealized_pnl = round(market_value - cost_basis, 2)
-    pnl_percent = round((unrealized_pnl / cost_basis * 100), 2) if cost_basis > 0 else 0.0
-    
-    return {
-        **holding,
-        "current_price": current_price,
-        "market_value": market_value,
-        "cost_basis": cost_basis,
-        "unrealized_pnl": unrealized_pnl,
-        "pnl_percent": pnl_percent
-    }
+            market_value = round(quantity * current_price, 2)
+            cost_basis = round(quantity * avg_price, 2)
+            unrealized_pnl = round(market_value - cost_basis, 2)
+            pnl_percent = round((unrealized_pnl / cost_basis * 100), 2) if cost_basis > 0 else 0.0
+
+            total_value += market_value
+            total_cost += cost_basis
+
+            formatted_holdings.append({
+                "symbol": symbol,
+                "quantity": quantity,
+                "average_buy_price": avg_price,
+                "current_price": current_price,
+                "market_value": market_value,
+                "cost_basis": cost_basis,
+                "unrealized_pnl": unrealized_pnl,
+                "pnl_percent": pnl_percent
+            })
+
+        # 4. Asset Allocation Weight
+        allocation = []
+        if total_value > 0:
+            for item in formatted_holdings:
+                weight = round((item["market_value"] / total_value) * 100, 2)
+                allocation.append({
+                    "symbol": item["symbol"],
+                    "allocation_percent": weight
+                })
+
+        total_pnl = round(total_value - total_cost, 2)
+        pnl_percent = round((total_pnl / total_cost * 100), 2) if total_cost > 0 else 0.0
+
+        return {
+            "portfolio_id": portfolio_id,
+            "total_value": round(total_value, 2),
+            "total_cost": round(total_cost, 2),
+            "total_pnl": total_pnl,
+            "pnl_percent": pnl_percent,
+            "holdings": formatted_holdings,
+            "allocation": allocation
+        }

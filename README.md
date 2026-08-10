@@ -75,6 +75,34 @@ It serves as the core AI engine for the [Agentic Finance Frontend](https://githu
 | `GET` | `/docs` | Swagger UI |
 
 ---
+📁 Updated Folder Structure
+
+app/
+├── api/v1/
+│   ├── routes/
+│   │   ├── auth.py          # Routes only
+│   │   ├── portfolio.py     # Routes only
+│   │   └── ai.py            # Routes only
+│   └── dependencies.py
+├── core/
+│   ├── config.py
+│   └── security.py
+├── models/                  # Database models (SQLAlchemy/Prisma)
+│   ├── user.py
+│   ├── portfolio.py
+│   └── transaction.py
+├── schemas/                 # Pydantic (API request/response)
+│   ├── user.py
+│   ├── portfolio.py
+│   └── transaction.py
+├── services/
+│   ├── auth_service.py      # Business logic
+│   ├── portfolio_service.py
+│   └── market_data_service.py  # Batch fetching + caching
+├── repositories/            # Database access
+│   ├── user_repository.py
+│   └── portfolio_repository.py
+└── agents/                  # AI agents (unchanged)
 
 ## 🚀 Live Demo
 
